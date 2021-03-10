@@ -5,10 +5,15 @@ function Home(){
     const onchange = e =>{
         setText(e.target.value)
     }
+    const onSubmit = e =>{
+        e.preventDefault();
+        console.log(text);
+        setText("")
+    }
     return(
         <div>
             <h1>ToDo</h1>
-            <form action="">
+            <form onSubmit={onSubmit}>
                 <input type="text" value={text} onChange={onchange}/>
                 <button>Add</button>
             </form>
